@@ -1,0 +1,180 @@
+Q1.
+<body>
+    <button onclick="
+                     alert('this is an alert');
+                     ">Button</button>
+</body>
+
+
+Q2.
+  <body>
+    <p class="sum"></p>
+    <p class="avg"></p>
+    <button onclick="grade()">Grade</button>
+    
+    <script>
+      /*
+	   const input1 = parseInt(prompt('enter marks: '), 10); /*10 is the radix. means the base of the number(2, 10, 8, 16). bydefault its 10 but a good practise to always type the radix. when using parseFloat radix is not needed.*
+        const input2 = parseInt(prompt('enter marks: '), 10);
+        
+        let sum = input1 + input2;
+        //console.log(typeof sum);
+        let avg = sum/5.0;
+        
+        document.querySelector('.sum').innerHTML = `sum is: ${sum}`;
+        document.querySelector('.avg').innerHTML = `average is: ${avg}`;
+
+      function grade(){
+        if(avg > 30)
+          alert('Congrats! You passed');
+        else
+          alert('Better luck next time');
+        /*
+        document.write(`sum is: ${sum}`);
+        document.write(`average is: ${avg}`);
+        *
+      }*/
+      
+
+	   let input = [];
+        let sum = 0; //so making this equal to zero will let the computer know its an integer ig?!
+        
+        for(let i=0; i<5; i++){
+          input[i] = parseInt(prompt(`enter marks${i+1}: `), 10);
+          sum += input[i];
+        }
+        
+        let avg = sum/5.0;
+        document.querySelector('.sum').innerHTML = `sum is: ${sum}`;
+        document.querySelector('.avg').innerHTML = `average is: ${avg}`;
+
+      function grade(){      
+        if(avg > 30)
+          alert('Congrats! You passed');
+        else
+          alert('Better luck next time');
+      }
+    </script>
+</body>
+
+
+Q3.
+  <body>
+    <button onmouseover="red()" onmouseout="white()">Red</button>
+    <button onmouseover="green()" onmouseout="white()">Green</button>
+    <button onmouseover="blue()" onmouseout="white()">Blue</button>
+    
+    <script>
+      function white(){
+        document.bgColor = 'white';
+      }
+      function red(){
+        document.bgColor = 'red';
+      }
+      function green(){
+        document.bgColor = 'green';
+      }
+      function blue(){
+        document.bgColor = 'blue';
+      }
+    </script>
+  </body>
+
+
+Q4.
+  <body>
+    <button onclick="area()">Calculate</button>
+    <p></p>
+    
+    <script>
+      function area(){
+        const input = parseFloat(prompt('Enter the radius:', '0'));
+        //const ans = (22/7)*input**2;
+        const ans = (22/7)*Math.pow(input, 2);
+        let roundedAns = ans.toFixed(2); //for 2 decimal points
+        document.querySelector('p').innerHTML = `area of the circle: ${roundedAns}`;
+      }
+      //console.log(5**3); output 125
+    </script>
+  </body>
+
+
+Q5.
+  <body>
+    <button onclick="date()">Date</button>
+    <p></p>
+    
+    <script>
+      function date(){
+        const num = parseInt(prompt('enter a number', '0'), 10);
+        if(num == 1)
+          document.querySelector('p').innerHTML = 'Monday';
+        else if(num == 2)
+          document.querySelector('p').innerHTML = 'Tuesday';
+        else if(num == 3)
+          document.querySelector('p').innerHTML = 'Wednesday';
+        else if(num == 4)
+          document.querySelector('p').innerHTML = 'Thursday';
+        else if(num == 5)
+          document.querySelector('p').innerHTML = 'Friday';
+        else if(num == 6)
+          document.querySelector('p').innerHTML = 'Saturday';
+        else if(num == 7)
+          document.querySelector('p').innerHTML = 'Sunday';
+        else
+          alert('wrong answer goofy ass');
+      }
+    </script>
+  </body>
+
+
+Q6.
+  <body>
+    <button onclick="google()">Google</button>
+    <p></p>
+    
+    <script>
+      function google(){
+        if(confirm('you bouta go to the google hompage'))
+          location.href = "https://google.com/";
+        else
+          alert('your dumb ass decided to stay');
+      }
+    </script>
+  </body>
+
+
+Q7.
+  <body>
+    <button onclick="calc()">Calculator</button>
+    <p></p>
+    
+    <script>
+      function calc(){
+        let sum = 0;
+        const input1 = parseFloat(prompt('enter first num:', 0));
+        const input2 = parseFloat(prompt('enter second num:', 0));
+        const type = prompt(`enter the method number
+1. addition
+2. subtraction
+3. division
+4. multiplication`);
+        if(type == 1)
+          sum = input1 + input2;
+        else if(type == 2)
+          sum = input1 - input2;
+        else if(type == 3)
+          sum = input1 / input2;
+        else if(type == 4)
+          sum = input1 * input2;
+        else
+          alert('good luck with that, mf');
+        
+        const ans = sum.toFixed(2);
+        document.querySelector('p').innerHTML = `answer: ${ans}`;
+      }
+    </script>
+  </body>
+
+
+Q8.
